@@ -1,0 +1,9 @@
+spring:
+  jpa:
+    hibernate:
+      ddl-auto: create
+  datasource:
+    url: jdbc:mysql://localhost:3306/zgest
+    username: root
+    password: @Kryze98_
+    driver-class-name: com.mysql.cj.jdbc.Driver

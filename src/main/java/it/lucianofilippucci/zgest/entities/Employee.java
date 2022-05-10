@@ -1,9 +1,6 @@
 package it.lucianofilippucci.zgest.entities;
 
-import javax.persistence.CascadeType;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.OneToMany;
+import javax.persistence.*;
 import java.util.Collection;
 import java.util.Objects;
 
@@ -16,13 +13,14 @@ public class Employee extends User{
         super();
     }
 
-    public Employee(Long id, Collection<Role> role) {
-        super();
+    public Employee(Long id, Collection<Role> role, String name, String lastName, String address, Collection<Phone> phones, Collection<Email> emails) {
+        super(name, lastName, address, phones, emails);
         this.employeeId = id;
         this.role = role;
     }
 
-    @GeneratedValue
+
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
     public Long getEmployeeId() {
         return employeeId;
     }
